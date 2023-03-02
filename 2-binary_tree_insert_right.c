@@ -2,29 +2,29 @@
 #include <stdlib.h>
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
-	/*create new node*/
+/*create new node*/
 
-	binary_tree_t *newnode;
-	binary_tree_t *temp;
+binary_tree_t *newnode;
+binary_tree_t *temp;
 
-	newnode = binary_tree_node(parent, value);
+newnode = binary_tree_node(parent, value);
 
-	if (newnode == NULL)
-	{
-		return NULL;
-	}
+if (newnode == NULL)
+{
+return NULL;
+}
 
-	if (parent->right == NULL)
-	{
-		parent->right = newnode;
+if (parent->right == NULL)
+{
+  parent->right = (newnode);
 
-	}
-	else
-	{
-		temp = parent->right;
-		parent->right = newnode;
-		newnode->right=temp;
-	}
-return newnode;
+}
+else
+{
+temp = parent->right;
+parent->right = newnode;
+newnode->right = temp;
+}
+ return (newnode);
 
 }
