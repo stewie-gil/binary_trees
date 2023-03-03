@@ -1,14 +1,19 @@
 #include "binary_trees.h"
 #include <stdlib.h>
 
-int height(const binary_tree_t *tree)
+size_t height_of_tree(const binary_tree_t *tree)
 {
-	if (tree == NULL)
+  size_t l = 0;
+  size_t r = 0;
+  
+  if (tree == NULL)
 	{
 		return 0;
 	}
-	int l = height(tree->left);
-	int r = height(tree->right);
+
+	
+	l = height_of_tree(tree->left);
+	r = height_of_tree(tree->right);
 
 	if (l > r)
 	{
@@ -19,14 +24,14 @@ int height(const binary_tree_t *tree)
 		return (r + 1); 
 	}
 
-	return 0;
+
 }
 
 int binary_tree_balance(const binary_tree_t *tree)
 {
   if (tree)
     {
-  return height(tree->left) - height(tree->right);
+  return height_of_tree(tree->left) - height_of_tree(tree->right);
     }
   return 0;
 }
