@@ -16,29 +16,28 @@ if (node == NULL)
 {
 return (NULL);
 }
-if(node->parent == NULL)
+if (node->parent == NULL)
 return (NULL);
 
 grandparent = node->parent->parent;
 
-if(grandparent == NULL)
+if (grandparent == NULL)
 {
 return (NULL);
 }
 
-if((grandparent->left == NULL) || (grandparent->right == NULL))
+if ((grandparent->left == NULL) || (grandparent->right == NULL))
 {
-return NULL;
+return (NULL);
 }
 else
 {
-leftgrandson = grandparent->left; 
+leftgrandson = grandparent->left;
 rightgrandson = grandparent->right;
- }
+}
+
 if (grandparent->right == node->parent)
-return leftgrandson;
-else 
-return rightgrandson;
-
-
+return (leftgrandson);
+else
+return (rightgrandson);
 }
